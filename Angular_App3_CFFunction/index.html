@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="/assets/angular/angular.min.js"></script>
+</head>
+<body>
+
+	<script>
+		var app = angular.module( "favoriteStuff", [] ); 
+
+		app.controller( "myController", function($scope, $http) 
+		{
+		    $http.get( "favoriteMusic.cfm" ).then(function(response) 
+		    {
+		        $scope.aryMusic = response.data;
+		    });
+
+		    $http.get( "favoriteMovies.cfm?includeCartoons" ).then(function(response) 
+		    {
+		        $scope.aryMovies = response.data;
+		    });
+		});
+	</script>
+
+	<div ng-app="favoriteStuff">
+		<div ng-controller="myController">
+			<h2>Favorite Music</h2>
+			<ul>
+		    	<li ng-repeat="m in aryMusic">{{m}}</li>
+			</ul>
+		</div>
+
+		<div ng-controller="myController">
+			<h2>Favorite Movies</h2>
+			<ul>
+		    	<li ng-repeat="m in aryMovies">{{m}}</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
