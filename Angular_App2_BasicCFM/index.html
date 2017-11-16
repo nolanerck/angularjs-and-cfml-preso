@@ -16,7 +16,7 @@
 		        $scope.aryMusic = response.data;
 		    });
 
-		    $http.get( "favoriteMovies.cfm" ).then(function(response) 
+		    $http.get( "favoriteMovies.cfm?includeCartoons" ).then(function(response) 
 		    {
 		        $scope.aryMovies = response.data;
 		    });
