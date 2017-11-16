@@ -13,6 +13,9 @@
 
 		<from>/api/book</from>
 		<to type="passthrough">/api/index.cfm/book</to>
+
+		<from>/api/movie</from>
+		<to type="passthrough">/api/index.cfm/movie</to>
 	</rule>
 </urlrewrite>
 
