@@ -10,6 +10,9 @@
 
 		<from>/api/musician</from>
 		<to type="passthrough">/api/index.cfm/musician</to>
+
+		<from>/api/book</from>
+		<to type="passthrough">/api/index.cfm/book</to>
 	</rule>
 </urlrewrite>
 

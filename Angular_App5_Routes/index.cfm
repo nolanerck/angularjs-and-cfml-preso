@@ -2,8 +2,6 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<script src="/assets/angular/angular.min.js"></script>
-	<script src="/assets/angular/angular-route.js"></script>
 </head>
 <body ng-app="popCultureApp">
 	<h2>Pop Culture App 1.0</h2>
@@ -19,6 +17,8 @@
 
 	<ng-view></ng-view>
 
+	<script src="/assets/angular/angular.min.js"></script>
+	<script src="/assets/angular/angular-route.js"></script>
 	<script>
 		var app = angular.module( "popCultureApp", [ "ngRoute" ] ); 
 
@@ -28,15 +28,19 @@
 				templateUrl : "./views/home.html"
 			})
 			.when("/music", {
-				templateUrl : "./views/music.html"
+				templateUrl : "./views/music.html",
+				controller : "musicController"
 			})
 			.when("/movies", {
-				templateUrl : "./views/movies.html"
+				templateUrl : "./views/movies.html",
+				controller : "movieController"
 			})
 			.when("/books", {
-				templateUrl : "./views/books.html"
+				templateUrl : "./views/books.html",
+				controller : "bookController"
 			});
 		});
 	</script>
+	<script src="./controllers/app-controllers.js"></script>
 </body>
 </html>
