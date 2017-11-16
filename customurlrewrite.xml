@@ -4,9 +4,12 @@
 	<rule>
 		<note>Generic Front-Controller URLs</note>
 
-		<!-- Turn localhost/foo into localhost/index.cfm/foo -->
-		<from>/api/^(.*)</from>
-		<to type="passthrough">/api/index.cfm/$1</to>
+		<!-- HACK! to make the Taffy API URI's work until I can fix the regex bug I have -->
+		<from>/api/hello</from>
+		<to type="passthrough">/api/index.cfm/hello</to>
+
+		<from>/api/musician</from>
+		<to type="passthrough">/api/index.cfm/musician</to>
 	</rule>
 </urlrewrite>
 

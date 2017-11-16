@@ -2,5 +2,14 @@
     "name":"angularjs-and-cfml",
     "app":{
         "cfengine":"adobe@2016.0.05+303689"
+    },
+    "web":{
+        "rewrites":{
+            "enable":true,
+            "config":"customurlrewrite.xml"
+        },
+        "http":{
+            "port":8080
+        }
     }
 }

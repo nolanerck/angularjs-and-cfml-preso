@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="/assets/angular/angular.min.js"></script>
+</head>
+<body>
+
+	<script>
+		var app = angular.module( "favoriteMusic", [] ); 
+
+		app.controller( "musicController", function($scope) 
+		{
+		    $scope.aryMusic = [ "Depeche Mode", "David Bowie", "7 Seconds", "Green Day", "The Beatles" ];
+		});
+	</script>
+
+	<div ng-app="favoriteMusic" ng-controller="musicController">
+		<h2>Favorite Music</h2>
+		<ul>
+	    	<li ng-repeat="m in aryMusic">{{m}}</li>
+		</ul>
+	</div>
+
+</body>
+</html>
