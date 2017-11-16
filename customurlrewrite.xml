@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.2//EN" "http://tuckey.org/res/dtds/urlrewrite3.2.dtd">
+<urlrewrite>
+	<rule>
+		<note>Generic Front-Controller URLs</note>
+
+		<!-- Turn localhost/foo into localhost/index.cfm/foo -->
+		<from>/api/^(.*)</from>
+		<to type="passthrough">/api/index.cfm/$1</to>
+	</rule>
+</urlrewrite>
+

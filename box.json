@@ -1,0 +1,11 @@
+{
+    "dependencies":{
+        "taffy":"https://github.com/atuttle/Taffy.git",
+        "Taffy.git":"https://github.com/atuttle/Taffy.git"
+    },
+    "installPaths":{
+        "taffy":".\\taffy",
+        "Taffy.git":"Taffy.git"
+    },
+    "version":"1.0.0"
+}

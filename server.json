@@ -1,0 +1,6 @@
+{
+    "name":"angularjs-and-cfml",
+    "app":{
+        "cfengine":"adobe@2016.0.05+303689"
+    }
+}
