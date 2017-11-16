@@ -5,36 +5,37 @@
 	<script src="/assets/angular/angular.min.js"></script>
 </head>
 <body>
-
 	<script>
-		var app = angular.module( "favoriteStuff", [] ); 
+		var app = angular.module( "favoriteMusic", [] ); 
 
-		app.controller( "myController", function($scope, $http) 
+		app.controller( "musicController", function($scope, $http) 
 		{
-		    $http.get( "favoriteMusic.cfm" ).then(function(response) 
-		    {
-		        $scope.aryMusic = response.data;
-		    });
+			$scope.aryMusic	= [];
 
-		    $http.get( "favoriteMovies.cfm?includeCartoons" ).then(function(response) 
-		    {
-		        $scope.aryMovies = response.data;
-		    });
+			$scope.setGenre = function( genrePassedIn ) 
+			{
+				var _url = "MusicUtils.cfc?method=getMusic&genre=" + genrePassedIn;
+				_url    += "&returnformat=json";
+
+				$http.get( _url ).then( function( response ) 
+			    {
+			        $scope.aryMusic = response.data;
+			    });
+		    };
 		});
 	</script>
 
-	<div ng-app="favoriteStuff">
-		<div ng-controller="myController">
+	<div ng-app="favoriteMusic">
+		<div ng-controller="musicController">
+			<button ng-click="setGenre( 'rap' );">Rap</button>
+			<button ng-click="setGenre( 'electronic' );">Electronic</button>
+			<button ng-click="setGenre( 'sacramento' );">Local to Sacramento</button>
+			<button ng-click="setGenre( 'metal' );">Metal</button>
+			<button ng-click="setGenre( '' );">No Preference</button>
+
 			<h2>Favorite Music</h2>
 			<ul>
 		    	<li ng-repeat="m in aryMusic">{{m}}</li>
-			</ul>
-		</div>
-
-		<div ng-controller="myController">
-			<h2>Favorite Movies</h2>
-			<ul>
-		    	<li ng-repeat="m in aryMovies">{{m}}</li>
 			</ul>
 		</div>
 	</div>

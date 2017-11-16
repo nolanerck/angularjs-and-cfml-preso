@@ -11,7 +11,7 @@
 
 		app.controller( "myController", function($scope, $http) 
 		{
-		    $http.get( "favoriteMusic.cfm?genre=sacramento" ).then(function(response) 
+		    $http.get( "favoriteMusic.cfm?genre=electronic" ).then(function(response) 
 		    {
 		        $scope.aryMusic = response.data;
 		    });
