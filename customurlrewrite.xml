@@ -5,7 +5,7 @@
 		<note>Generic Front-Controller URLs</note>
 
 		<!-- HACK! to make the Taffy API URI's work until I can fix the regex bug I have -->
-		<from>/api/hello</from>
+<!--		<from>/api/hello</from>
 		<to type="passthrough">/api/index.cfm/hello</to>
 
 		<from>/api/musician</from>
@@ -16,6 +16,9 @@
 
 		<from>/api/movie</from>
 		<to type="passthrough">/api/index.cfm/movie</to>
+-->
+		<from>/api/(.+?)</from>
+		<to type="passthrough">/api/index.cfm/$1</to>	
 	</rule>
 </urlrewrite>
 
