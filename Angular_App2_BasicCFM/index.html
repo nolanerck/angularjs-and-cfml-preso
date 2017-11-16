@@ -7,21 +7,21 @@
 <body>
 
 	<script>
-		var app = angular.module( "favoriteMovies", [] ); 
+		var app = angular.module( "favoriteMusic", [] ); 
 
-		app.controller( "movieController", function($scope, $http) 
+		app.controller( "musicController", function($scope, $http) 
 		{
-		    $http.get( "favoriteMovies.cfm" ).then(function(response) 
+		    $http.get( "favoriteMusic.cfm" ).then(function(response) 
 		    {
-		        $scope.aryMovies = response.data;
+		        $scope.aryMusic = response.data;
 		    });
 		});
 	</script>
 
-	<div ng-app="favoriteMovies" ng-controller="movieController">
-		<h2>Favorite Movies</h2>
+	<div ng-app="favoriteMusic" ng-controller="musicController">
+		<h2>Favorite Music</h2>
 		<ul>
-	    	<li ng-repeat="m in aryMovies">{{m}}</li>
+	    	<li ng-repeat="m in aryMusic">{{m}}</li>
 		</ul>
 	</div>
 
