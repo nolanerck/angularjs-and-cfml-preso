@@ -4,18 +4,32 @@ app.controller("bookController", function ($scope, $http)
 
     var _bookAPI = "/api/book/";
 
-	$http.get( _url ).then( function( response ) 
+	$http.get( _bookAPI ).then( function( response ) 
     {
-        $scope.aryMusic = response.data;
+        $scope.aryBooks = response.data;
     });
 });
 
 app.controller("movieController", function ($scope, $http) 
 {
-    $scope.aryMovies = [ "Singles", "Rounders", "Top Gun", "Real Genius", "UHF", "Clue" ];
+    //$scope.aryMovies = [ "Singles", "Rounders", "Top Gun", "Real Genius", "UHF", "Clue" ];
+
+    var _MovieAPI = "/api/movie/";
+
+	$http.get( _MovieAPI ).then( function( response ) 
+    {
+        $scope.aryMovies = response.data;
+    });
 });
 
 app.controller("musicController", function ($scope, $http) 
 {
-    $scope.aryPunkBands = [ "Black Flag", "SSD", "Iggy Pop", "7 Seconds", "The Knockoffs" ]; 
+    //$scope.aryPunkBands = [ "Black Flag", "SSD", "Iggy Pop", "7 Seconds", "The Knockoffs" ]; 
+
+    var _MusicAPI = "/api/musician/";
+
+	$http.get( _MusicAPI ).then( function( response ) 
+    {
+        $scope.aryPunkBands = response.data;
+    });
 });
