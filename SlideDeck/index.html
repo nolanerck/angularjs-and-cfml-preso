@@ -34,29 +34,26 @@
 			<div class="slides">
 				<section>
 					<h2>Connecting Angular and CFML</h2>
-					<p>Nolan Erck</p>
+					<p>Nolan Erck<br>South of Shasta</p>
 				</section>
 
 				<section>
-					<h2>About Nolan</h2>
+					<h2>About Me</h2>
 					<ul>
-						<li>Owner &amp; Chief Consultant at South of Shasta
+						<li>Software Consultant (southofshasta.com)
 							<ul>
-								<li>Software Development, Training</li>
+								<li>Software Development, Training, Design</li>
 							</ul>
 						</li>
-						<li>OpenTable, ZenDesk, Turn It In, AcademyX, HackerLab</li>
-						<li>ColdFusion, C++, Java, jQuery, PHP, .NET, HTML5, Android, SQL, etc...</li>
-						<li>Manager, SacInteractive User Group</li>
-						<li>Reformed Video Game Developer (Grim Fandango, SimPark, StarWars Rogue Squadron, etc)</li>
+
+						<li>ColdFusion, C++, Java, jQuery, PHP, .NET, HTML5, Angular, SQL, etc...</li>
+						<li>Manager of SacInteractive User Group</li>
+						<li>Reformed Video Game Developer (Grim Fandango, SimPark, StarWars Rogue Squadron, etc).</li>
 						<li>Music Junkie</li>
 					</ul>
 				</section>
 
-				<section data-background-image="./images/cd_shelf.png">
-				</section>
-
-				<section data-background-image="./images/vinyl_shelf.png">
+				<section data-background-image="./images/record-collection.jpg" data-background-size="contain">
 				</section>
 
 				<section data-background-image="./images/charlie_brown.png" data-background-size="contain">
@@ -88,10 +85,10 @@
 				<section>
 					<h2>You're all in the right place</h2>
 					<ul>
-						<li>You don't <em>have</em> to use API Manager.</li>
-						<li>You don't <em>have</em> to have proper MVC code.</li>
-						<li>You don't <em>have</em> to have be an Angular guru to start.</li>
-						<li>...but the more you know is obviously helpful.</li>
+						<li>You don't <em>have</em> to use API Manager</li>
+						<li>You don't <em>have</em> to have proper MVC code</li>
+						<li>You don't <em>have</em> to have be an Angular guru to start</li>
+						<li>...but the more you know is obviously helpful</li>
 					</ul>
 				</section>
 
@@ -99,10 +96,22 @@
 					<h2>For today's talk</h2>
 					<ul>
 						<li>We're using Angular 1.x</li>
-						<li>Path of least resistance, fewer moving parts than v2 or 4</li>
+						<li>Path of least resistance, fewer moving parts than v2+</li>
+						<li>Supported thru mid-2020</li>
 						<li>ColdFusion 2016</li>
 						<li>But nothing in the talk is CF 2016 specific</li>
 						<li>Everything is running via CommandBox</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>For Angular 2+ Sidebar</h2>
+					<ul>
+						<li>I have a version of this talk for Angular 2+</li>
+						<li>Very different workflow</li>
+						<li>Requires familiarity with Node, CLI tools, Promises, rxjs, Observables</li>
+						<li>More moving parts than Angular 1</li>
+						<li>Contact me, we can schedule a time to give that talk for you</li>
 					</ul>
 				</section>
 
@@ -146,8 +155,9 @@
 						<li>http://sitename/api/user/123 (create)</li>
 						<li>http://sitename/api/user/123 (update)</li>
 						<li>http://sitename/api/user/123 (delete)</li>
-						<li>The <em>same</em> URL for all actions.</li>
-						<li>Change the HTTP verb to change the behavior.</li>
+						<li>The <em>same</em> URL for all actions</li>
+						<li>Change the HTTP verb to change the behavior</li>
+						<li>GET, POST, PUT, DELETE</li>
 					</ul>
 				</section>
 
@@ -155,18 +165,39 @@
 					<h2>API vs REST API</h2>
 					<ul>
 						<li>So which is best?</li>
-						<li>REST has a more <em>consistent</em> interface out of the box.</li>
-						<li>REST is the current "standard".</li>
-						<li>But under the hood, your code does the same "thing" either way.</li>
+						<li>REST has a more <em>consistent</em> interface out of the box</li>
+						<li>REST is the current "standard"</li>
+						<li>But under the hood, your code does the same "thing" either way</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Does this mean....?</h2>
+					<h2>Does this mean...</h2>
 					<ul>
-						<li>...I have to install something on my CF server? - No</li>
-						<li>...I <em>have</em> to use AngularJS? - No</li>
-						<li>...I have to rewrite my whole CF app? - No</li>
+						<li>I have to install something on my CF server?</li>
+						<li>No</li>
+						<li>Angular is just .js files</li>
+						<li>Many ways to build API functionality in CFML</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Does this mean...</h2>
+					<ul>
+						<li>I <em>have</em> to use AngularJS?</li>
+						<li>No</li>
+						<li>Many ways to connect JavaScript to an API</li>
+						<li>Vue, Angular, React, jQuery, vanilla JS all work</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Does this mean...</h2>
+					<ul>
+						<li>I have to rewrite my whole CF app?</li>
+						<li>No</li>
+						<li>Angular 1.x can drop into existing request/response apps</li>
+						<li>(Harder to do with Angular 2+)</li>
 						<li>We'll show several ways to use Angular and CFML</li>
 					</ul>
 				</section>
@@ -197,6 +228,12 @@
 
 				<section>
 					<p><a href="/api">AngularJS + Taffy</a></p>
+				</section>
+
+				<section>
+					<p>
+						AngularJS + ColdBox REST API
+					</p>
 				</section>
 
 				<section>
