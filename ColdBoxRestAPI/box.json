@@ -1,0 +1,34 @@
+{
+    "name":"ColdBoxRestAPI",
+    "version":"1.0.0",
+    "location":"",
+    "author":"You",
+    "slug":"coldboxrestap",
+    "createPackageDirectory":false,
+    "type":"mvc",
+    "homepage":"https://github.com/coldbox-templates/rest",
+    "documentation":"https://github.com/coldbox-templates/rest",
+    "repository":{
+        "type":"git",
+        "url":"https://github.com/coldbox-templates/rest"
+    },
+    "bugs":"https://github.com/coldbox-templates/rest/issues",
+    "shortDescription":"This template gives you the base for building RESTFul web services with ColdBox",
+    "contributors":[],
+    "ignore":[],
+    "devDependencies":{
+        "testbox":"^2.7.0",
+        "relax":"^3.0.2"
+    },
+    "installPaths":{
+        "coldbox":"coldbox",
+        "testbox":"testbox",
+        "relax":"modules/relax",
+        "cbswagger":"modules/cbswagger"
+    },
+    "dependencies":{
+        "coldbox":"^5.0.0",
+        "cbswagger":"^1.2.1"
+    },
+    "scripts":{}
+}

@@ -20,5 +20,11 @@
 		<from>/api/(.+?)</from>
 		<to type="passthrough">/api/index.cfm/$1</to>	
 	</rule>
+	<rule>
+		<note>Taffy API URLs</note>
+
+		<from>/taffyapi/(.+?)</from>
+		<to type="passthrough">/taffyapi/index.cfm/$1</to>	
+	</rule>
 </urlrewrite>
 
